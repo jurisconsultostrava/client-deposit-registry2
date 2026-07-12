@@ -1,0 +1,107 @@
+{
+  "name": "Deposit",
+  "type": "object",
+  "properties": {
+    "client_first_name": {
+      "type": "string",
+      "description": "K\u0159estn\u00ed jm\u00e9no klienta"
+    },
+    "client_last_name": {
+      "type": "string",
+      "description": "P\u0159\u00edjmen\u00ed klienta"
+    },
+    "client_date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "Datum narozen\u00ed klienta"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefonn\u00ed \u010d\u00edslo klienta"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "E-mailov\u00e1 adresa klienta"
+    },
+    "contract_type": {
+      "type": "string",
+      "enum": [
+        "Gold Deposit",
+        "Silver Deposit",
+        "Other"
+      ],
+      "description": "Typ smlouvy"
+    },
+    "contract_number": {
+      "type": "string",
+      "description": "\u010c\u00edslo smlouvy"
+    },
+    "commodity": {
+      "type": "string",
+      "enum": [
+        "Au",
+        "Ag",
+        "Pt",
+        "Pd",
+        "Other"
+      ],
+      "description": "Typ komodity"
+    },
+    "investment_amount": {
+      "type": "number",
+      "description": "Hmotnost kovu v gramech"
+    },
+    "gold_price": {
+      "type": "number",
+      "description": "Cena AU (USD za trojskou unci) v dob\u011b vytvo\u0159en\u00ed"
+    },
+    "current_value_czk": {
+      "type": "number",
+      "description": "Aktu\u00e1ln\u00ed hodnota v CZK (vypo\u010d\u00edt\u00e1no automaticky)"
+    },
+    "contract_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Datum podpisu smlouvy"
+    },
+    "maturity_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Lh\u016fta pro ukon\u010den\u00ed (automaticky vypo\u010d\u00edt\u00e1no)"
+    },
+    "automatic_renewal": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No"
+      ],
+      "default": "No",
+      "description": "Mo\u017enost automatick\u00e9ho obnoven\u00ed"
+    },
+    "closed": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No"
+      ],
+      "default": "No",
+      "description": "Stav uzav\u0159en\u00ed vkladu"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Ve\u0159ejn\u00e9 pozn\u00e1mky"
+    },
+    "interest_paid_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Datum vyplacen\u00cd \u00faroku"
+    },
+    "internal_information": {
+      "type": "string",
+      "description": "Intern\u00ed informace pouze pro zam\u011bstnance"
+    }
+  },
+  "required": [],
+  "rls": {}
+}
