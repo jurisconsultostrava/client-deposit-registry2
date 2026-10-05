@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Deposit } from "@/entities/Deposit";
+import { Deposit } from "../entities/Deposit";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -25,7 +24,7 @@ export default function NewDeposit() {
     client_date_of_birth: "",
     phone: "",
     email: "",
-    contract_type: "",
+    client_address: "",
     contract_number: "",
     commodity: "",
     investment_amount: "",
@@ -224,20 +223,15 @@ export default function NewDeposit() {
               </CardTitle>
             </CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="contract-type" className="text-sm font-medium">
-                  Typ smlouvy <span className="text-red-500">*</span>
-                </Label>
-                <Select value={formData.contract_type} onValueChange={(value) => handleInputChange("contract_type", value)}>
-                  <SelectTrigger className="mt-1">
-                    <SelectValue placeholder="Vyberte typ smlouvy" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Gold Deposit">Gold Deposit</SelectItem>
-                    <SelectItem value="Silver Deposit">Silver Deposit</SelectItem>
-                    <SelectItem value="Other">Ostatní</SelectItem>
-                  </SelectContent>
-                </Select>
+              <div className="md:col-span-2">
+                <Label htmlFor="client-address" className="text-sm font-medium">Adresa klienta</Label>
+                <Input
+                  id="client-address"
+                  value={formData.client_address}
+                  onChange={(e) => handleInputChange("client_address", e.target.value)}
+                  className="mt-1"
+                  placeholder="Ulice a číslo, město, PSČ"
+                />
               </div>
               <div>
                 <Label htmlFor="contract-number" className="text-sm font-medium">
