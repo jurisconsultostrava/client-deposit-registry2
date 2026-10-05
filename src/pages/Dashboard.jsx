@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Deposit } from "@/entities/Deposit";
+import { Deposit } from "../entities/deposit";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link, useLocation } from "react-router-dom";
